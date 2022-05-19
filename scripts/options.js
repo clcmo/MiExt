@@ -1,4 +1,4 @@
-let page = document.getElementById("buttonDiv");
+var page = document.getElementById("changeColor");
 let selectedClassName = "current";
 const presetButtonColors = ["#3aa757", "#e8453c", "#f9bb2d", "#4688f1"];
 
@@ -38,7 +38,30 @@ function constructOptions(buttonColors) {
 
       // …and register a listener for when that button is clicked
       button.addEventListener("click", handleButtonClick);
-      page.appendChild(button);
+      if(page){
+        
+        page.appendChild(button);
+      
+      
+        // When the button is clicked, inject setPageBackgroundColor into current page
+        page.addEventListener("click", async () => {
+          let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      
+              chrome.scripting.executeScript({
+                  target: { tabId: tab.id },
+                  function: setPageBackgroundColor,
+              });
+          });
+
+          // The body of this function will be execuetd as a content script inside the
+          // current page
+          function setPageBackgroundColor() {
+            chrome.storage.sync.get("color", ({ color }) => {
+                document.body.style.backgroundColor = color;
+            });
+          }
+        }
+
     }
   });
 }
