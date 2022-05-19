@@ -1,19 +1,27 @@
 {
-    "manifest_version": 2,
-    "author": "Camila L. Oliveira",
-    "version": "0.0.2",
     "name": "Hello",
     "description": "Build an Extension!",
+    "manifest_version": 3,
+    "author": "Camila L. Oliveira",
+    "version": "0.0.3",    
     "background": {
-      "scripts": ["scripts/background.js"],
-      "persistent": false
+        "service_worker": "/scripts/background.js"
     },
-    "content_scripts": {
-      "js": ["scripts/content.js"]
-    },
-    "permissions": ["storage"],  
-    "browser_action": {    
-        "default_icon": "icon.png",    
-        "default_popup": "./src/extension/popup.html"  
-    }
+    "permissions": ["storage", "activeTab", "scripting"],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {
+        "16": "/assets/icon.png",
+        "32": "/assets/icon.png",
+        "48": "/assets/icon.png",
+        "128": "/assets/icon.png"
+        }
+  },
+  "icons": {
+    "16": "/assets/icon.png",
+    "32": "/assets/icon.png",
+    "48": "/assets/icon.png",
+    "128": "/assets/icon.png"
+  },
+  "options_page": "options.html"
 }
