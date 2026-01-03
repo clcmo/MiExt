@@ -62,7 +62,7 @@ MiExt/
 1. Clone este repositório ou baixe como ZIP:
 
    ```bash
-   git clone https://github.com/clcmo/miext.git
+   git clone https://github.com/clcmo/MiExt.git
    ```
 
 2. Ou faça download manual e extraia para uma pasta no seu computador
