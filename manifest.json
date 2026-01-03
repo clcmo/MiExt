@@ -1,27 +1,38 @@
 {
-    "name": "Hello",
-    "description": "Build an Extension!",
     "manifest_version": 3,
-    "author": "Camila L. Oliveira",
-    "version": "0.0.3",    
-    "background": {
-        "service_worker": "/scripts/background.js"
-    },
-    "permissions": ["storage", "activeTab", "scripting"],
+    "name": "MiExt from Camila L. Oliveira",
+    "version": "1.0",
+    "description": "Salve conteúdos de camilaloliveira.com para ler depois em um popup",
+    "permissions": [
+        "storage",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://camilaloliveira.com/*"
+    ],
     "action": {
-        "default_popup": "index.html",
+        "default_popup": "popup.html",
         "default_icon": {
-        "16": "/assets/icon.png",
-        "32": "/assets/icon.png",
-        "48": "/assets/icon.png",
-        "128": "/assets/icon.png"
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
         }
-  },
-  "icons": {
-    "16": "/assets/icon.png",
-    "32": "/assets/icon.png",
-    "48": "/assets/icon.png",
-    "128": "/assets/icon.png"
-  },
-  "options_page": "options.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://camilaloliveira.com/*"
+            ],
+            "js": [
+                "src/models/ContentModel.js",
+                "src/controllers/ContentController.js",
+                "src/views/ContentView.js"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    }
 }

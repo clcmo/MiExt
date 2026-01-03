@@ -1,7 +1,23 @@
-# chromeExt
+# MiExt for Chrome, Opera and others browser extensions
 
-Extensão criada para desenvolver o aprendizado na criação de extensões para o Google Chrome.
+---
 
-Essa extensão foi baseada nos tutoriais:
-- [Saudar o público com Hello World](https://medium.com/code-prestige/sua-primeira-extens%C3%A3o-para-o-chrome-em-2-minutos-858895f5cc6c)
-- [Fazer o usuário selecionar o background color de sua preferência](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
+## Project Structure
+
+MiExt/
+├── manifest.json
+├── popup.html
+├── icons/
+│   ├── icon16.png
+│   ├── icon48.png
+│   └── icon128.png
+└── src/
+    ├── models/
+    │   ├── ContentModel.js       # Model para content script
+    │   └── PopupModel.js         # Model para popup
+    ├── views/
+    │   ├── ContentView.js        # View para content script
+    │   └── PopupView.js          # View para popup
+    └── controllers/
+        ├── ContentController.js  # Controller para content script
+        └── PopupController.js    # Controller para popup
