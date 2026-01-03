@@ -2,10 +2,10 @@
 
 Extensão para navegadores que permite salvar conteúdos do site camilaloliveira.com para ler depois em um popup conveniente enquanto você navega pela internet.
 
-[![GitHub license](https://img.shields.io/github/license/clcmo/miext?style=for-the-badge)](https://github.com/clcmo/miext)
-[![GitHub stars](https://img.shields.io/github/stars/clcmo/miext?style=for-the-badge)](https://github.com/clcmo/miext/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/clcmo/miext?style=for-the-badge)](https://github.com/clcmo/miext/network)
-[![GitHub issues](https://img.shields.io/github/issues/clcmo/miext?style=for-the-badge)](https://github.com/clcmo/miext/issues)
+[![GitHub license](https://img.shields.io/github/license/clcmo/MiExt?style=for-the-badge)](https://github.com/clcmo/MiExt)
+[![GitHub stars](https://img.shields.io/github/stars/clcmo/MiExt?style=for-the-badge)](https://github.com/clcmo/MiExt/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/clcmo/MiExt?style=for-the-badge)](https://github.com/clcmo/MiExt/network)
+[![GitHub issues](https://img.shields.io/github/issues/clcmo/MiExt?style=for-the-badge)](https://github.com/clcmo/MiExt/issues)
 [![GitHub donate](https://img.shields.io/github/sponsors/clcmo?color=pink&style=for-the-badge)](https://github.com/sponsors/clcmo)
 
 ---
