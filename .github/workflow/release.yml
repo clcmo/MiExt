@@ -5,9 +5,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 permissions:
   id-token: write
@@ -15,28 +12,33 @@ permissions:
   issues: write
   pull-requests: write
 
-
 jobs:
   release:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout do código
-        uses: actions/checkout@v3
-        with: 
+        uses: actions/checkout@v4
+        with:
           fetch-depth: 0
 
       - name: Instalar Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '24.10.0'
+          node-version: '20'
 
       - name: Instalar dependências
         run: npm install
 
+      - name: Empacotar extensão
+        run: |
+          zip -r MiExt-${{ github.sha }}.zip \
+            manifest.json \
+            popup.html \
+            icons/ \
+            src/
+
       - name: Executar Semantic Release
         env:
-          # GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
